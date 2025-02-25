@@ -1,6 +1,6 @@
 # AF3BB
 
-**AlphaFold3 Batch Binder (AF3BB)** is a local pipeline for **high-throughput screening of protein-protein interactions (PPIs) using AlphaFold3**. Given a target protein and multiple candidate binding proteins—such as an antigen with a set of potential antibody candidates—AF3BB automates the structure prediction and binding assessment process, **enabling efficient identification of strong interactors and providing insights into potential binding epitopes**.
+_**A**lpha**F**old**3** **B**atch **B**inder_ (**AF3BB**) is a local pipeline for **high-throughput screening of protein-protein interactions (PPIs) using AlphaFold3**. Given a target protein and multiple candidate binding proteins—such as an antigen with a set of potential antibody candidates—AF3BB automates the structure prediction and binding assessment process, **enabling efficient identification of strong interactors and providing insights into potential binding epitopes**.
 
 ### **Key Features**
 
