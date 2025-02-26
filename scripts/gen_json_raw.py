@@ -82,8 +82,20 @@ def main():
         os.makedirs(path, exist_ok=True)
 
     # Move JSON files into group directories for parallel processing
-    files = [f for f in os.listdir(raw_json_dir) if os.path.isfile(os.path.join(raw_json_dir, f))]
-    for index, file in enumerate(files):
+    target_json_files = []
+    binder_json_files = []
+    for file in os.listdir(raw_json_dir):
+        if os.path.isfile(os.path.join(raw_json_dir, file)):
+            if any(file.startswith(name) for name in df_t["name"]):
+                target_json_files.append(file)
+            else:
+                binder_json_files.append(file)
+
+    # Prioritise target in P1
+    for file in target_json_files:
+        shutil.move(os.path.join(raw_json_dir, file), os.path.join(group_dirs[0], file))
+
+    for index, file in enumerate(binder_json_files):
         target_dir = group_dirs[index % len(group_dirs)]
         shutil.move(os.path.join(raw_json_dir, file), os.path.join(target_dir, file))
 
